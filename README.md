@@ -1,7 +1,7 @@
 # vtmdiceprobs
 
-# compile
+To Compile
 gcc -o vtm_dice vtm_dice.c
 
-#run
+To Run
 ./vtm_dice
