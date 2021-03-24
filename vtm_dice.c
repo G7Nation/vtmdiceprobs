@@ -15,6 +15,27 @@ void usage(void)
 }
 
 /*
+ * Simple sample roll
+ */
+void sample_roll(int ndice, int diff)
+{
+    int i, roll, succ = 0;
+
+    printf("Sample roll: ");
+    for (i=0; i<ndice; i++) {
+        roll = (rand() % NUM_SIDES) + 1;
+        if (roll >= diff) {
+            succ++;
+        } else if (roll == 1) {
+            succ--;
+        }
+
+        printf("%d ", roll);
+    }
+    printf("\nSuccesses: %d\n", succ);
+}
+
+/*
  * Calculates probabilities of rolling each number of successes
  * plus probability for botching
  */
@@ -113,6 +134,8 @@ int main(int argc, char *argv[])
     prob_success(ndice, diff);
     printf("\n");
     avg_success(ndice, diff);
+    printf("\n");
+    sample_roll(ndice, diff);
 
     return 0;
 }
